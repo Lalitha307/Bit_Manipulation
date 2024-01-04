@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+#define ll long long;
+using namespace std;
+const int MOD =(int)1e9+7;
+long long dp[1000001];
+void swapNumber(int &a, int &b) {
+	int c;
+	c=a^b;
+	a=c^a;
+	b=c^b;
+}
