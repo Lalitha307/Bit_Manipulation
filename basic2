@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+#define ll long long;
+using namespace std;
+const int MOD =(int)1e9+7;
+long long dp[1000001];
+void swapNumber(int &a, int &b) {
+	int c;
+	c=a^b;
+	a=c^a;
+	b=c^b;
+}
+
+void kthbit(int n,int k)//Kth bit set or not
+{
+	if(n&(1<<(k-1))!=0)
+	{
+		cout<<"YES";
+	}
+	else
+	{
+		return "NO";
+	}
+}
+void kthbit2(int n,int k)
+{
+	if(((n>>(k-1))&1)==1)
+	{
+		cout<<"YES";
+	}
+	else
+	{
+		cout<<"NO";
+	}
+}
+//count set bits
+int countsetbits(int n)
+{
+
+	int res=0;
+	while(n>0)
+	{
+		if(n%2!=0)
+		{
+			res++;
+		}
+		n=n/2;
+	}
+}
+//method 2
+int countsetbits2(int n)
+{
+	while(n>0)
+	{
+		if((n&1)==1)
+		{
+			res++;
+
+		}//res=res+(n&1);
+		n=n>>1;
+	}
+}
+//Brain Kerningams Algorithm
+
+int countbits(int n)
+{
+	int res=0;
+	while(n>0)
+	{
+		n=(n&(n-1));
+		res++;
+	}
+	return res;
+}
